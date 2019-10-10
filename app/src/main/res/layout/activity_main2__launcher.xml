@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main2Activity_Launcher">
+
+
+
     <TextView
         android:id="@+id/text_view1"
         android:layout_width="match_parent"
@@ -15,14 +18,22 @@
         android:layout_height="50sp"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/last_result_field_view"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="580sp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@+id/text_view1"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/last_result_field_view"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="580sp"-->
+<!--        android:background="@color/colorDark"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_view1">-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="580sp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/text_view1"/>
+
+<!--    </TextView>-->
 
     <Button
         android:id="@+id/button_calculator_open"

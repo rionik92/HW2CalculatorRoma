@@ -125,8 +125,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onBackButton(View view) {
         Intent intent1 = new Intent(this, Main2Activity_Launcher.class);
-
-//        intent1.putExtra("number_text", numberField.toString());
+        //        intent1.putExtra("number_text", numberField.toString());
 //        intent1.putExtra("number_text2", operationField.toString());
 //        intent1.putExtra("number_text3", resultField.toString());
 
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             String total2 = String.valueOf(operationField.getText());
             String total3 = String.valueOf(resultField.getText());
                     intent1.putExtra("number_text", total1);
-                    intent1.putExtra("number_text2", total2);
+            intent1.putExtra("number_text2", total2);
             intent1.putExtra("number_text3", total3);
         }
         startActivity(intent1);
