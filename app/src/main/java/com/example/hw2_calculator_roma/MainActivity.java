@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Double operand = null;  // операнд операции
     String lastOperation = "="; // последняя операция
     Button back;
+    MainAdapter adapter;
 
 
     @Override
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         operationField = (TextView) findViewById(R.id.operationField);
         back = findViewById(R.id.back);
 
+
+        adapter.activity = this;
+
         getIntent();
-
-
-
 
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     // сохранение состояния
