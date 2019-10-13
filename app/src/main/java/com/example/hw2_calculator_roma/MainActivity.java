@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView operationField;    // текстовое поле для вывода знака операции
     Double operand = null;  // операнд операции
     String lastOperation = "="; // последняя операция
+    Button back;
 
 
     @Override
@@ -27,9 +28,27 @@ public class MainActivity extends AppCompatActivity {
         resultField = (TextView) findViewById(R.id.resultField);
         numberField = (EditText) findViewById(R.id.numberField);
         operationField = (TextView) findViewById(R.id.operationField);
+        back = findViewById(R.id.back);
 
         getIntent();
 
+
+
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = resultField.getText().toString();
+
+                Intent intent = new Intent();
+                intent.putExtra("result_key", text);
+                setResult(RESULT_OK, intent);
+                finish();
+
+
+            }
+        });
     }
 
     // сохранение состояния
@@ -123,25 +142,33 @@ public class MainActivity extends AppCompatActivity {
         numberField.setText(null);
 
     }
-    public void onBackButton(View view) {
-        Intent intent1 = new Intent(this, Main2Activity_Launcher.class);
-        //        intent1.putExtra("number_text", numberField.toString());
-//        intent1.putExtra("number_text2", operationField.toString());
-//        intent1.putExtra("number_text3", resultField.toString());
+
+//    public void onBackButton(View view) {
+//
+//        Intent intent = new Intent();
+//        String total1 = String.valueOf(operationField.getText());
+//        //String total2 = String.valueOf(resultField.getText());
+//        // String total3 = String.valueOf(numberField.getText());
+//        intent.putExtra("result_key", total1);
+//        //
+//        //intent.putExtra("result_key2", total2);
+//        // intent.putExtra("result_key", total3);
+//        setResult(RESULT_OK, intent);
+//        finish();
+
+//        intent.putExtra("result_key", numberField.toString());
+//      intent.putExtra("result_key2", operationField.toString());
+//        intent.putExtra("number_text3", resultField.toString());
 
 
-        if(operand == null){
-            operand = null;
-        } else  {
+//        if (operand == null) {
+//            operand = null;
+//        } else {
+//
+//
+//
+//        }
+//        startActivity(intent);
 
 
-            String total1 = String.valueOf(numberField.getText());
-            String total2 = String.valueOf(operationField.getText());
-            String total3 = String.valueOf(resultField.getText());
-                    intent1.putExtra("number_text", total1);
-            intent1.putExtra("number_text2", total2);
-            intent1.putExtra("number_text3", total3);
-        }
-        startActivity(intent1);
-
-    }}
+}

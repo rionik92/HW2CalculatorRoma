@@ -27,7 +27,7 @@
             android:textSize="35sp" android:background="@color/colorWhite"/>
 
         <Button
-            android:onClick="onBackButton"
+            android:id="@+id/back"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:text="НАЗАД"
